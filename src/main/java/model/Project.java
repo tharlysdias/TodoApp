@@ -6,6 +6,7 @@
 package model;
 
 import java.util.Date;
+import java.util.logging.Logger;
 
 /**
  *
@@ -18,10 +19,9 @@ public class Project {
     private String description;
     private Date createdAt;
     private Date updatedAt;
+    private static final Logger LOG = Logger.getLogger(Project.class.getName());
 
-    /**
-     * Constructor
-     */
+    // Constructor
     public Project(int id, String name, String description, Date createdAt, Date updatedAt) {
         this.id = id;
         this.name = name;
@@ -29,11 +29,14 @@ public class Project {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
+    
+    public Project() {
+        this.createdAt = new Date();
+        this.updatedAt = new Date();
+    }
 
-    /**
-     * Getters and Setters
-     * Métodos de acesso
-     */
+    // Getters and Setters
+    // Métodos de acesso
     public int getId() {
         return id;
     }
@@ -73,13 +76,10 @@ public class Project {
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
-
     
-    /**
-     * toString()
-     */
+    // toString
     @Override
     public String toString() {
-        return "Project{" + "id=" + id + ", name=" + name + ", description=" + description + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + '}';
+        return this.name;
     }
 }

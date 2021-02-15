@@ -6,6 +6,7 @@
 package model;
 
 import java.util.Date;
+import java.util.logging.Logger;
 
 /**
  *
@@ -13,9 +14,7 @@ import java.util.Date;
  */
 public class Task {
     
-    /**
-     * Atributos da tarefa
-     */
+    // Atributos da tarefa
     private int id;
     private int idProject;
     private String name;
@@ -25,11 +24,11 @@ public class Task {
     private Date deadline;
     private Date createdAt;
     private Date updatedAt;
-
+    private static final Logger LOG = Logger.getLogger(Task.class.getName());
     
-    /**
-     * Constructor
-     */
+    // Constructor
+    // Pode existir mais de um constructor, só deve-se ter o cuidado de colocar
+    // parametros diferentes
     public Task(int id, int idProject, String name, String description, String notes, boolean isCompleted, Date deadline, Date createdAt, Date updatedAt) {
         this.id = id;
         this.idProject = idProject;
@@ -41,11 +40,15 @@ public class Task {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
+    
+    public Task() {
+        this.isCompleted = false;
+        this.createdAt = new Date();
+        this.updatedAt = new Date();
+    }
 
     
-    /**
-     * Getters and Setters
-     */
+    // Getters and Setters
     public int getId() {
         return id;
     }
@@ -118,11 +121,8 @@ public class Task {
         this.updatedAt = updatedAt;
     }
 
-    /**
-     * 
-     * Metodo publico que retorna uma String, a qual recebe o nome da classe
-     * e ainda tem o nome do atributo e o valor que está armazenado no atributo
-     */
+    // Metodo publico que retorna uma String, a qual recebe o nome da classe
+    // e ainda tem o nome do atributo e o valor que está armazenado no atributo 
     @Override
     public String toString() {
         return "Task{" + "id=" + id + ", idProject=" + idProject + ", name=" + name + ", description=" + description + ", notes=" + notes + ", isCompleted=" + isCompleted + ", deadline=" + deadline + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + '}';
