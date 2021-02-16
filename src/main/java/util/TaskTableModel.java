@@ -14,7 +14,7 @@ public class TaskTableModel extends AbstractTableModel {
 
     String[] columns = {"Nome", "Descrição", "Prazo", "Tarefa Concluída", "Editar", "Excluir"}; // Colunas que vão aparecer na Table
 
-    List<Task> tasks = new ArrayList(); // Lista dos dados que a table vai ter
+    List<Task> tasks = new ArrayList<>(); // Lista dos dados que a table vai ter
 
     @Override
     // Metodo que diz quantas linhas (tarefas) eu vou ter
@@ -47,9 +47,8 @@ public class TaskTableModel extends AbstractTableModel {
     }
 
     @Override
-    // Metodo que vai dizer qual o valor deve ser exibido em cada linha e coluna
-    public Object getValueAt(int rowIndex, int columnIndex) {
-
+    public Object getValueAt(int rowIndex, int columnIndex) { // Metodo que vai dizer qual o valor deve ser exibido em cada linha e coluna
+        
         switch (columnIndex) {
             case 0:
                 return tasks.get(rowIndex).getName();
