@@ -12,7 +12,9 @@ repositories {
 dependencies {
     testImplementation     'junit:junit:4.13'
     // Pesquisar a dependencia ou procurar no repositorio
-    // mysql-connector-java gradle
+    // mysql-connector-java > gradle
     // https://mvnrepository.com/artifact/mysql/mysql-connector-java
     compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.13'
+    // https://mvnrepository.com/artifact/org.swinglabs/swing-layout
+    implementation group: 'org.swinglabs', name: 'swing-layout', version: '1.0.3'
 }

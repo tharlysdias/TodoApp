@@ -327,7 +327,7 @@ public class MainScreen extends javax.swing.JFrame {
                 .addGap(8, 8, 8))
         );
 
-        pack();
+        setBounds(0, 0, 840, 724);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabelProjectsAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelProjectsAddMouseClicked

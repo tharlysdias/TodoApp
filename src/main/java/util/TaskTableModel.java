@@ -16,6 +16,7 @@ public class TaskTableModel extends AbstractTableModel {
 
     List<Task> tasks = new ArrayList<>(); // Lista dos dados que a table vai ter
 
+    // Sobrescrita, pois estou sobrescrevendo um metodo que está na AbstractTableModel
     @Override
     // Metodo que diz quantas linhas (tarefas) eu vou ter
     public int getRowCount() {
@@ -28,7 +29,7 @@ public class TaskTableModel extends AbstractTableModel {
         return columns.length; // retorna o número de colunas tem na table
     }
 
-    @Override // SobEscrita, pois estou sobrescrevendo um metodo que está na AbstractTableModel
+    @Override
     public String getColumnName(int columnIndex) {
         return columns[columnIndex];
     }

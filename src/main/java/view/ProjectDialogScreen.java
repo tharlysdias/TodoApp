@@ -145,14 +145,15 @@ public class ProjectDialogScreen extends javax.swing.JDialog {
                 .addContainerGap())
         );
 
-        pack();
+        setSize(new java.awt.Dimension(400, 379));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabelToolBarSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelToolBarSaveMouseClicked
         // TODO add your handling code here:
         
         try {
-            if (!jTextFieldName.getText().equals("")) {
+            if (!jTextFieldName.getText().equals("")) { // ! - se o valor do campo não for vazio eu cadastro
                 // Novo objeto de projeto (crio um novo projeto)
                 Project project = new Project();
                 project.setName(jTextFieldName.getText());
